@@ -65,3 +65,5 @@ export default function Education() {
     </div>    
   )
 }
+
+// Submit to add degree to Education function
