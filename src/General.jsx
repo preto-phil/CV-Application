@@ -18,10 +18,24 @@ export default function General() {
         />
       </label>
       <br />
+      <label htmlFor="tel">Tel:{' '}
+        <input 
+          id="tel"
+          type="tel" 
+        />
+      </label>
+      <br />
       <label htmlFor="email">Email:{' '}
         <input 
           id="email"
           type="email" 
+        />
+      </label>
+      <br />
+      <label htmlFor="website">Website:{' '}
+        <input 
+          id="website"
+          type="url" 
         />
       </label>
     </div>    

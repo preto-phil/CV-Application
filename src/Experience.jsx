@@ -1,8 +1,15 @@
+const job = [
+  {
+    title: 'Job Title',
+    company: 'Company',
+    start: 'Start',
+    end: 'End'
+  },
+]
 
-
-export default function Experience() {
+function Job() {
   return (
-    <div className="generalDiv">
+    <>
       <h2>Education</h2>
       <label htmlFor="title">Job title:{' '}
         <input 
@@ -34,7 +41,15 @@ export default function Experience() {
           min="1900" 
           max="2023"
         />
-      </label>
+      </label>    
+    </>
+  )
+}
+
+export default function Experience() {
+  return (
+    <div className="generalDiv">
+      <Job />
     </div>    
   )
 }

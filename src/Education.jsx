@@ -1,9 +1,7 @@
 
-
-export default function Education() {
+function Degree() {
   return (
-    <div className="generalDiv">
-      <h2>Education</h2>
+    <>
       <label htmlFor="degree">Degree:{' '}
         <input 
           id="degree"
@@ -34,7 +32,16 @@ export default function Education() {
           min="1900" 
           max="2023"
         />
-      </label>
+      </label>    
+    </>
+  )
+}
+
+export default function Education() {
+  return (
+    <div className="generalDiv">
+      <h2>Education</h2>
+      <Degree />
     </div>    
   )
 }
