@@ -1,11 +1,11 @@
-const job = [
+/* const job = [
   {
     title: 'Job Title',
     company: 'Company',
     start: 'Start',
     end: 'End'
   },
-]
+] */
 
 function Job() {
   return (
