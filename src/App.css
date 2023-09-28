@@ -38,7 +38,12 @@ main {
 
 
   display: flex;
-  justify-content: center;
+  align-items: start;
+  justify-content: start;
+  flex-direction: column;
+
+  padding: 4rem;
+  gap: 2rem;
 
   color: black;
   background-color: white;
@@ -46,4 +51,8 @@ main {
 
 p {
   color: rgb(28, 28, 29);
+}
+
+li {
+  list-style: none;
 }

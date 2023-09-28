@@ -4,7 +4,8 @@ export default function Page(
     email,
     address,
     tel,
-    website
+    website,
+    degrees
   }
 ) {
   return (
@@ -17,6 +18,47 @@ export default function Page(
         <p>Tel: {tel}</p>
         <p>Website: {website}</p>
       </div>
+      <div className="eduPage">
+        <h2>Education</h2>
+        {degrees.map(d => 
+          <li key={d.id}>
+            <p>{d.degree}</p>
+            <p>{d.institution}</p>
+            <p>{d.start}</p>
+            <p>{d.end}</p>
+          </li>
+        )}
+      </div>
     </div>
   )
 }
+
+// for each degree array 
+
+/* 
+
+Pass down degree array as a prop from CV
+useState in CV component
+
+const degrees = []
+
+example of an degree:
+
+{
+  id: uuid() | or | 0,
+  degree: 'Bcom (Industrial Psychology)',
+  institution: 'Stellenbosch University',
+  start: 2018,
+  end: 2020,
+}
+
+degrees.map(d => 
+  <li key={id}>
+    <p>{d.degree}</p>
+    <p>{d.institution}</p>
+    <p>{d.start}</p>
+    <p>{d.end}</p>
+</li>
+)
+
+*/

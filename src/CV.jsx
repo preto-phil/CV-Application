@@ -3,30 +3,7 @@ import Form from './Form'
 import Page from './Page'
 import data from './example-data';
 
-// Share state between the two components
-/* function add() {
 
-}
-
-function delete() {
-
-}
-
-function edit() {
-
-} */
-
-/* const info = {
-  name: 'John Doe',
-  address: '13 Graveyard Street, Spooky Town',
-  tel: 2742069666,
-  email: 'johndoe@gmail.com',
-  website: 'www.allworknoplay.com',
-}
-
-function controlGeneralState() {
-
-} */
 
 export default function CV() {
   const [name, setName] = useState(data.genInfo.name);
@@ -35,6 +12,15 @@ export default function CV() {
   const [tel, setTel] = useState(data.genInfo.tel);
   const [website, setWebsite] = useState(data.genInfo.website);
 
+  const degrees = [
+    {
+      degree: 'Bcom (Industrial Psychology)',
+      institution: 'Stellenbosch University',
+      start: 2018,
+      end: 2020,
+      id: 0
+    },
+  ]
 
   function changeName(event) {
     setName(event.target.value)
@@ -51,7 +37,13 @@ export default function CV() {
   function changeWebsite(event) {
     setWebsite(event.target.value)
   }
-  
+
+/*   const [degreeInfo, setDegreeInfo] = useState(degrees[0])
+
+  function changeDegrees() {
+    setDegreeInfo(...degreeInfo, )
+  }
+   */
   return (
     <>
       <Form 
@@ -60,6 +52,7 @@ export default function CV() {
         changeEmail={changeEmail}
         changeTel={changeTel}
         changeWebsite={changeWebsite}
+
       />
       <Page 
         name={name} 
@@ -67,7 +60,7 @@ export default function CV() {
         email={email} 
         tel={tel} 
         website={website} 
-
+        degrees={degrees}
       />      
     </>
   )
