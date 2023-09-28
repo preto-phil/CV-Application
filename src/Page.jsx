@@ -24,8 +24,7 @@ export default function Page(
           <li key={d.id}>
             <p>{d.degree}</p>
             <p>{d.institution}</p>
-            <p>{d.start}</p>
-            <p>{d.end}</p>
+            <p>{d.start} - {d.end}</p>
           </li>
         )}
       </div>

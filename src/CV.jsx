@@ -20,6 +20,13 @@ export default function CV() {
       end: 2020,
       id: 0
     },
+    {
+      degree: 'Bcom Hons (Industrial Psychology)',
+      institution: 'Stellenbosch University',
+      start: 2021,
+      end: 2021,
+      id: 1
+    },
   ]
 
   function changeName(event) {

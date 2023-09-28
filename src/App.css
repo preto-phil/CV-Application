@@ -29,6 +29,8 @@ main {
   flex-direction: column;
   background-color: rgb(109, 103, 103);
   margin: 3rem 4.5rem;
+  min-height: 85vh;
+
 }
 
 .page {
@@ -55,4 +57,10 @@ p {
 
 li {
   list-style: none;
+}
+
+.genFormDiv {
+  border: 3px solid rgb(165, 71, 42);
+  border-radius: 6px;
+  padding: 2rem;
 }
