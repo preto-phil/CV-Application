@@ -9,31 +9,43 @@ export default function Form(
     changeAddress,
     changeEmail,
     changeTel,
-    changeWebsite 
+    changeWebsite,
+    changeDegree,
+    changeInstitution,
+    changeStart,
+    changeEnd,
  }) {
 
-  const [hide, setHide] = useState(false);
+  const [hideGen, setHideGen] = useState(false);
+  const [hideEdu, setHideEdu] = useState(false);
 
   function hideGenInfo() {
-    if (!hide) {
-      setHide(true);
-    } else {
-      setHide(false);
-    }
+    !hideGen ? setHideGen(true) : setHideGen(false);
+  }
+
+  function hideEduInfo() {
+    !hideEdu ? setHideEdu(true) : setHideEdu(false);
   }
 
   return (
     <div className='form'>
       <h2 onClick={hideGenInfo}>General Information</h2>
-      {hide ? null :
+      {hideGen ? null :
       <General 
         changeName={changeName} 
         changeAddress={changeAddress}
         changeEmail={changeEmail}
         changeTel={changeTel}
-        changeWebsite={changeWebsite}     
+        changeWebsite={changeWebsite}  
       />}
-      <Education />
+      <h2 onClick={hideEduInfo}>Education</h2>
+      {hideEdu ? null :
+      <Education 
+        changeDegree={changeDegree}
+        changeInstitution={changeInstitution}
+        changeStart={changeStart}
+        changeEnd={changeEnd}
+      />}
       <Experience />
     </div>
   )

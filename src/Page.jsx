@@ -5,7 +5,11 @@ export default function Page(
     address,
     tel,
     website,
-    degrees
+    degree,
+    institution,
+    start,
+    end,
+    id
   }
 ) {
   return (
@@ -20,13 +24,12 @@ export default function Page(
       </div>
       <div className="eduPage">
         <h2>Education</h2>
-        {degrees.map(d => 
-          <li key={d.id}>
-            <p>{d.degree}</p>
-            <p>{d.institution}</p>
-            <p>{d.start} - {d.end}</p>
-          </li>
-        )}
+          <div key={id}>
+            <p>Degree: {degree}</p>
+            <p>Institution: {institution}</p>
+            <p>Start: {start}</p>
+            <p>End: {end}</p>
+          </div>
       </div>
     </div>
   )
@@ -59,5 +62,28 @@ degrees.map(d =>
     <p>{d.end}</p>
 </li>
 )
+
+  return (
+    <div className="page">
+      <div className="genPage">
+        <h2>General Information</h2>
+        <p>Name: {name}</p>
+        <p>Email: {email}</p>
+        <p>Address: {address}</p>
+        <p>Tel: {tel}</p>
+        <p>Website: {website}</p>
+      </div>
+      <div className="eduPage">
+        <h2>Education</h2>
+        {degrees.map(d => 
+          <li key={d.id}>
+            <p>{d.degree}</p>
+            <p>{d.institution}</p>
+            <p>{d.start} - {d.end}</p>
+          </li>
+        )}
+      </div>
+    </div>
+  )
 
 */

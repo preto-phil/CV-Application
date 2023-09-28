@@ -12,23 +12,6 @@ export default function CV() {
   const [tel, setTel] = useState(data.genInfo.tel);
   const [website, setWebsite] = useState(data.genInfo.website);
 
-  const degrees = [
-    {
-      degree: 'Bcom (Industrial Psychology)',
-      institution: 'Stellenbosch University',
-      start: 2018,
-      end: 2020,
-      id: 0
-    },
-    {
-      degree: 'Bcom Hons (Industrial Psychology)',
-      institution: 'Stellenbosch University',
-      start: 2021,
-      end: 2021,
-      id: 1
-    },
-  ]
-
   function changeName(event) {
     setName(event.target.value)
   }
@@ -45,12 +28,54 @@ export default function CV() {
     setWebsite(event.target.value)
   }
 
-/*   const [degreeInfo, setDegreeInfo] = useState(degrees[0])
 
-  function changeDegrees() {
-    setDegreeInfo(...degreeInfo, )
+/*   const degrees = [
+    {
+      degree: 'Bcom (Industrial Psychology)',
+      institution: 'Stellenbosch University',
+      start: 2018,
+      end: 2020,
+      id: 0
+    },
+    {
+      degree: 'Bcom Hons (Industrial Psychology)',
+      institution: 'Stellenbosch University',
+      start: 2021,
+      end: 2021,
+      id: 1
+    },
+  ] */
+
+  const degrees = {
+      degree: 'Bcom (Industrial Psychology)',
+      institution: 'Stellenbosch University',
+      start: 2018,
+      end: 2020,
+      id: 0
   }
-   */
+
+  const [degree, setDegree] = useState(degrees.degree);
+  const [institution, setInstitution] = useState(degrees.institution)
+  const [start, setStart] = useState(degrees.start)
+  const [end, setEnd] = useState(degrees.end)
+
+/*   function changeDegrees() {
+    setDegreeInfo(...degreeInfo, )
+  } */
+
+  function changeDegree(event) {
+    setDegree(event.target.value)
+  }
+  function changeInstitution(event) {
+    setInstitution(event.target.value)
+  }
+  function changeStart(event) {
+    setStart(event.target.value)
+  }
+  function changeEnd(event) {
+    setEnd(event.target.value)
+  }
+
   return (
     <>
       <Form 
@@ -59,7 +84,10 @@ export default function CV() {
         changeEmail={changeEmail}
         changeTel={changeTel}
         changeWebsite={changeWebsite}
-
+        changeDegree={changeDegree}
+        changeInstitution={changeInstitution}
+        changeStart={changeStart}
+        changeEnd={changeEnd}
       />
       <Page 
         name={name} 
@@ -67,7 +95,11 @@ export default function CV() {
         email={email} 
         tel={tel} 
         website={website} 
-        degrees={degrees}
+        degree={degree}
+        institution={institution} 
+        start={start} 
+        end={end} 
+        id={degree.id}
       />      
     </>
   )

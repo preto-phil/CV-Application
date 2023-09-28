@@ -1,68 +1,48 @@
-import { useState } from "react"
-
-const degree =
-  {
-    degree: 'Bcom (Industrial Psychology)',
-    institution: 'Stellenbosch University',
-    start: 2018,
-    end: 2020,
-    id: 0
-  }
-
-function Degree() {
-  const [degreeInfo, setDegreeInfo] = useState(degree)
+export default function Education({
+  changeDegree,
+  changeInstitution,
+  changeStart,
+  changeEnd,
+}) {
 
   return (
-    <>
+    <div className="eduDiv">
       <label htmlFor="degree">Degree:{' '}
-        <input 
+        <input
           id="degree"
-          type="text" 
-          onChange={(e) => setDegreeInfo({ ...degreeInfo, degree: e.target.value })}
+          type="text"
+          onChange={changeDegree}
         />
       </label>
-      <p>{degreeInfo.degree}</p>
       <br />
       <label htmlFor="institution">Institution:{' '}
-        <input 
+        <input
           id="institution"
-          type="text" 
-          onChange={(e) => setDegreeInfo({ ...degreeInfo, institution: e.target.value })}
+          type="text"
+          onChange={changeInstitution}
         />
       </label>
-      <p>{degreeInfo.institution}</p>
       <br />
       <label htmlFor="startDate">Start Date:{' '}
-        <input 
+        <input
           id="startDate"
           type="number"
-          min="1900" 
+          min="1900"
           max="2023"
-          onChange={(e) => setDegreeInfo({ ...degreeInfo, start: e.target.value })}
+          onChange={changeStart}
         />
       </label>
-      <p>{degreeInfo.start}</p>
       <br />
       <label htmlFor="endDate">End Date:{' '}
-        <input 
+        <input
           id="endDate"
           type="number"
-          min="1900" 
+          min="1900"
           max="2023"
-          onChange={(e) => setDegreeInfo({ ...degreeInfo, end: e.target.value })}
+          onChange={changeEnd}
         />
-      </label>    
-      <p>{degreeInfo.end}</p>
-    </>
-  )
-}
-
-export default function Education() {
-  return (
-    <div className="generalDiv">
-      <h2>Education</h2>
-      <Degree />
-    </div>    
+      </label>
+    </div> 
   )
 }
 
