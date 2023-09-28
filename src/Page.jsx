@@ -1,7 +1,7 @@
-export default function Page() {
+export default function Page({ name }) {
   return (
     <div className="page">
-      <p>Content should come here</p>
+      <p>{name}</p>
     </div>
   )
 }

@@ -1,13 +1,11 @@
 import './App.css'
-import Form from './Form'
-import Page from './Page'
+import CV from './CV'
 
 function App() {
   return (
     <>
       <main>
-        <Form />
-        <Page />
+        <CV />
       </main>
     </>
   )

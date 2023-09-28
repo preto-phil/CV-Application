@@ -8,7 +8,7 @@ const info = {
   website: 'www.allworknoplay.com',
 }
 
-export default function General() {
+export default function General({ changeName }) {
   const [allInfo, setInfo] = useState(info);
 
   return (
@@ -18,7 +18,7 @@ export default function General() {
         <input 
           id="name"
           type="text" 
-          onChange={(e) => setInfo({ ...allInfo, name: e.target.value })}
+          onChange={changeName}
         />
       </label>
       <p>{allInfo.name}</p>
