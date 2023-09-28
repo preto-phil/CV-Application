@@ -37,7 +37,7 @@ export default function CV() {
   return (
     <>
       <Form changeName={changeName} />
-      <Page name={name}/>      
+      <Page name={name} />      
     </>
   )
 }
