@@ -1,26 +1,15 @@
-import data from "./example-data";
-
 export default function Education({
   changeDegree,
   changeInstitution,
   changeStart,
   changeEnd,
+  degrees,
+  addDegree
 }) {
-
-  function addDegreeDiv() {
-    data.degrees.push({
-      degree: 'Bcom (Industrial Psychology)',
-      institution: 'Stellenbosch University',
-      start: 2018,
-      end: 2020,
-      id: 1 // unique id
-      },);
-      console.log(data.degrees.length);
-  }
 
   return (
     <div className="eduDiv">
-      {data.degrees.map(d => 
+      {degrees.map(d => 
         <li key={d.id}>
           <div className="divDiv">
           <label htmlFor="degree">Degree:{' '}
@@ -62,7 +51,7 @@ export default function Education({
         </li>
       )}
       <div>
-        <button onClick={addDegreeDiv}>Add</button>
+        <button onClick={addDegree}>Add</button>
         <button>Edit</button>
         <button>Delete</button>
       </div>

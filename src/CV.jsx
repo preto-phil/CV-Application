@@ -26,8 +26,7 @@ export default function CV() {
     setWebsite(event.target.value)
   }
 
-
-  const degrees = [
+  const [degrees, setDegrees] = useState([
     {
       degree: 'Bcom (Industrial Psychology)',
       institution: 'Stellenbosch University',
@@ -35,14 +34,26 @@ export default function CV() {
       end: 2020,
       id: 0
     },
-    {
+/*     {
       degree: 'Bcom Hons (Industrial Psychology)',
       institution: 'Stellenbosch University',
       start: 2021,
       end: 2021,
       id: 1
-    },
-  ]
+    }, */
+  ]);
+
+  function addDegree() {
+    setDegrees(degrees => [...degrees, 
+      {
+        degree: 'Bcom (Industrial Psychology)',
+        institution: 'Stellenbosch University',
+        start: 2018,
+        end: 2020,
+        id: 1 // unique id
+      }
+    ]);
+  }
 
 /*   // Degrees should be an array
 
@@ -89,6 +100,7 @@ export default function CV() {
         changeStart={changeStart}
         changeEnd={changeEnd}
         degrees={degrees}
+        addDegree={addDegree}
       />
       <Page 
         name={name} 
