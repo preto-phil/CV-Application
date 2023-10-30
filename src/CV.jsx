@@ -3,8 +3,6 @@ import Form from './Form'
 import Page from './Page'
 import data from './example-data';
 
-
-
 export default function CV() {
   const [name, setName] = useState(data.genInfo.name);
   const [address, setAddress] = useState(data.genInfo.address);
@@ -29,7 +27,7 @@ export default function CV() {
   }
 
 
-/*   const degrees = [
+  const degrees = [
     {
       degree: 'Bcom (Industrial Psychology)',
       institution: 'Stellenbosch University',
@@ -44,7 +42,9 @@ export default function CV() {
       end: 2021,
       id: 1
     },
-  ] */
+  ]
+
+/*   // Degrees should be an array
 
   const degrees = {
       degree: 'Bcom (Industrial Psychology)',
@@ -53,11 +53,11 @@ export default function CV() {
       end: 2020,
       id: 0
   }
-
-  const [degree, setDegree] = useState(degrees.degree);
-  const [institution, setInstitution] = useState(degrees.institution)
-  const [start, setStart] = useState(degrees.start)
-  const [end, setEnd] = useState(degrees.end)
+ */
+  const [degree, setDegree] = useState(degrees[0].degree);
+  const [institution, setInstitution] = useState(degrees[0].institution)
+  const [start, setStart] = useState(degrees[0].start)
+  const [end, setEnd] = useState(degrees[0].end)
 
 /*   function changeDegrees() {
     setDegreeInfo(...degreeInfo, )
@@ -88,6 +88,7 @@ export default function CV() {
         changeInstitution={changeInstitution}
         changeStart={changeStart}
         changeEnd={changeEnd}
+        degrees={degrees}
       />
       <Page 
         name={name} 

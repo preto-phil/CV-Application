@@ -14,6 +14,7 @@ export default function Form(
     changeInstitution,
     changeStart,
     changeEnd,
+    degrees
  }) {
 
   const [hideGen, setHideGen] = useState(false);
@@ -45,6 +46,7 @@ export default function Form(
         changeInstitution={changeInstitution}
         changeStart={changeStart}
         changeEnd={changeEnd}
+        degrees={degrees}
       />}
       <Experience />
     </div>
