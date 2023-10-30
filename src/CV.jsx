@@ -32,15 +32,8 @@ export default function CV() {
       institution: 'Stellenbosch University',
       start: 2018,
       end: 2020,
-      id: 0
+      id: 0 // unique id nb
     },
-/*     {
-      degree: 'Bcom Hons (Industrial Psychology)',
-      institution: 'Stellenbosch University',
-      start: 2021,
-      end: 2021,
-      id: 1
-    }, */
   ]);
 
   function addDegree() {
@@ -50,29 +43,15 @@ export default function CV() {
         institution: 'Stellenbosch University',
         start: 2018,
         end: 2020,
-        id: 1 // unique id
+        id: 1 // unique id nb
       }
     ]);
   }
 
-/*   // Degrees should be an array
-
-  const degrees = {
-      degree: 'Bcom (Industrial Psychology)',
-      institution: 'Stellenbosch University',
-      start: 2018,
-      end: 2020,
-      id: 0
-  }
- */
   const [degree, setDegree] = useState(degrees[0].degree);
   const [institution, setInstitution] = useState(degrees[0].institution)
   const [start, setStart] = useState(degrees[0].start)
   const [end, setEnd] = useState(degrees[0].end)
-
-/*   function changeDegrees() {
-    setDegreeInfo(...degreeInfo, )
-  } */
 
   function changeDegree(event) {
     setDegree(event.target.value)
@@ -113,7 +92,11 @@ export default function CV() {
         start={start} 
         end={end} 
         id={degree.id}
+        degrees={degrees}
       />      
     </>
   )
 }
+
+// NB moet components op skyf - anderste gaan die degrees mekaar se data uit skakel
+// Skyf alles na Form toe (?)

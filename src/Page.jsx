@@ -5,11 +5,12 @@ export default function Page(
     address,
     tel,
     website,
-    degree,
+/*     degree,
     institution,
     start,
     end,
-    id
+    id, */
+    degrees
   }
 ) {
   return (
@@ -24,12 +25,14 @@ export default function Page(
       </div>
       <div className="eduPage">
         <h2>Education</h2>
-          <div key={id}>
-            <p>Degree: {degree}</p>
-            <p>Institution: {institution}</p>
-            <p>Start: {start}</p>
-            <p>End: {end}</p>
-          </div>
+        {degrees.map((d, index) => 
+        <li key={index}>
+          <p>{d.degree}</p>
+          <p>{d.institution}</p>
+          <p>{d.start}</p>
+          <p>{d.end}</p>
+        </li>
+        )}
       </div>
     </div>
   )
