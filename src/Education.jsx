@@ -9,28 +9,28 @@ export default function Education({
 
   return (
     <div className="eduDiv">
-      {degrees.map(d => 
-        <li key={d.id}>
+      {degrees.map((d, index) => 
+        <li key={index}>
           <div className="divDiv">
-          <label htmlFor="degree">Degree:{' '}
+          <label>Degree:{' '}
             <input
-              id="degree"
+              className="degree"
               type="text"
               onChange={changeDegree}
             />
           </label>
           <br />
-          <label htmlFor="institution">Institution:{' '}
+          <label>Institution:{' '}
             <input
-              id="institution"
+              className="institution"
               type="text"
               onChange={changeInstitution}
             />
           </label>
           <br />
-          <label htmlFor="startDate">Start Date:{' '}
+          <label>Start Date:{' '}
             <input
-              id="startDate"
+              className="startDate"
               type="number"
               min="1900"
               max="2023"
@@ -38,9 +38,9 @@ export default function Education({
             />
           </label>
           <br />
-          <label htmlFor="endDate">End Date:{' '}
+          <label>End Date:{' '}
             <input
-              id="endDate"
+              className="endDate"
               type="number"
               min="1900"
               max="2023"

@@ -26,12 +26,41 @@ export default function CV() {
     setWebsite(event.target.value)
   }
 
+  const defaultDegree = {
+    degree: 'Bcom (Industrial Psychology)',
+    institution: 'Stellenbosch University',
+    start: 2018,
+    end: 2020,
+    id: 0 // unique id nb
+  };
+
+  const [degree, setDegree] = useState(defaultDegree.degree);
+  const [institution, setInstitution] = useState(defaultDegree.institution)
+  const [start, setStart] = useState(defaultDegree.start)
+  const [end, setEnd] = useState(defaultDegree.end)
+
+  function changeDegree(event) {
+    setDegree(event.target.value)
+  }
+
+  function changeInstitution(event) {
+    setInstitution(event.target.value)
+  }
+
+  function changeStart(event) {
+    setStart(event.target.value)
+  }
+
+  function changeEnd(event) {
+    setEnd(event.target.value)
+  }
+  
   const [degrees, setDegrees] = useState([
     {
-      degree: 'Bcom (Industrial Psychology)',
-      institution: 'Stellenbosch University',
-      start: 2018,
-      end: 2020,
+      degree: degree,
+      institution: institution,
+      start: start,
+      end: end,
       id: 0 // unique id nb
     },
   ]);
@@ -39,31 +68,13 @@ export default function CV() {
   function addDegree() {
     setDegrees(degrees => [...degrees, 
       {
-        degree: 'Bcom (Industrial Psychology)',
-        institution: 'Stellenbosch University',
-        start: 2018,
-        end: 2020,
+        degree: degree,
+        institution: institution,
+        start: start,
+        end: end,
         id: 1 // unique id nb
       }
     ]);
-  }
-
-  const [degree, setDegree] = useState(degrees[0].degree);
-  const [institution, setInstitution] = useState(degrees[0].institution)
-  const [start, setStart] = useState(degrees[0].start)
-  const [end, setEnd] = useState(degrees[0].end)
-
-  function changeDegree(event) {
-    setDegree(event.target.value)
-  }
-  function changeInstitution(event) {
-    setInstitution(event.target.value)
-  }
-  function changeStart(event) {
-    setStart(event.target.value)
-  }
-  function changeEnd(event) {
-    setEnd(event.target.value)
   }
 
   return (
