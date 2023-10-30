@@ -39,6 +39,8 @@ export default function Page(
 
 // for each degree array 
 
+// test
+
 /* 
 
 Pass down degree array as a prop from CV
